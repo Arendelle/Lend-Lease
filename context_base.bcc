@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;org.animb.valuation.valBase">
+<org.eventb.core.scCarrierSet name="Bicycles" org.eventb.core.source="/Bicycle/context_base.buc|org.eventb.core.contextFile#context_base|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.scCarrierSet name="People" org.eventb.core.source="/Bicycle/context_base.buc|org.eventb.core.contextFile#context_base|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(People)"/>
+</org.eventb.core.scContextFile>

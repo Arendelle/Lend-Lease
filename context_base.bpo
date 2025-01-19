@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="2">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="2">
+<org.eventb.core.poIdentifier name="Bicycles" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(People)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Bicycle/context_base.bpo|org.eventb.core.poFile#context_base|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="2"/>
+</org.eventb.core.poFile>

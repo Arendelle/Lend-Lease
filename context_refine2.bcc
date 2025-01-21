@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;org.animb.valuation.valBase">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Bicycle/context_refine1.bcc|org.eventb.core.scContextFile#context_refine1" org.eventb.core.source="/Bicycle/context_refine2.buc|org.eventb.core.contextFile#context_refine2|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scInternalContext name="context_base">
+<org.eventb.core.scCarrierSet name="Bicycles" org.eventb.core.source="/Bicycle/context_base.buc|org.eventb.core.contextFile#context_base|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.scCarrierSet name="People" org.eventb.core.source="/Bicycle/context_base.buc|org.eventb.core.contextFile#context_base|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(People)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="context_refine1">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Bicycle/context_base.bcc|org.eventb.core.scContextFile#context_base" org.eventb.core.source="/Bicycle/context_refine1.buc|org.eventb.core.contextFile#context_refine1|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scAxiom name="context_basf" org.eventb.core.label="axm1" org.eventb.core.predicate="LEASE_LIMIT∈ℕ" org.eventb.core.source="/Bicycle/context_refine1.buc|org.eventb.core.contextFile#context_refine1|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="LEASE_LIMIT" org.eventb.core.source="/Bicycle/context_refine1.buc|org.eventb.core.contextFile#context_refine1|org.eventb.core.constant#(" org.eventb.core.type="ℤ"/>
+</org.eventb.core.scInternalContext>
+</org.eventb.core.scContextFile>

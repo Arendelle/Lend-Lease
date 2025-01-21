@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="machine_refine1"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="context_refine2"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="车棚内的单车" org.eventb.core.identifier="Garage"/>
+<org.eventb.core.variable name=")" org.eventb.core.comment="已经被借出的单车" org.eventb.core.identifier="Lent"/>
+<org.eventb.core.variable name="-" org.eventb.core.comment="借车人与所借车的记录" org.eventb.core.identifier="Lend_Record"/>
+<org.eventb.core.variable name="1" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
+<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="Membership ≔ ∅" org.eventb.core.comment="初始没有会员" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="3" org.eventb.core.comment="用户借车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Lease">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Lease"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="用户为会员才可借车" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ Membership"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="4" org.eventb.core.comment="用户还车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ Membership"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="5" org.eventb.core.comment="会员集合" org.eventb.core.identifier="Membership"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv1" org.eventb.core.predicate="Membership ⊆ People"/>
+<org.eventb.core.event name="7" org.eventb.core.comment="加入会员" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Join">
+<org.eventb.core.guard name="'" org.eventb.core.comment="用户类型判断" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ People"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="入会人" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="用户不属于会员才可入会" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∉ Membership"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="Membership ≔ Membership ∪ {user}" org.eventb.core.comment="用户成为会员" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.comment="退出会员" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Quit">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="退会用户" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="用户类型判断" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ People"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="退会前是会员" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ Membership"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="退会时所借车数量为0" org.eventb.core.label="grd3" org.eventb.core.predicate="User_Lend_Count(user) = 0"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="Membership ≔ Membership ∖ {user}" org.eventb.core.comment="在会员集合中删除该用户" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="Garage ≔ ∅" org.eventb.core.comment="车库初始为空" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="Garage ≔ ∅" org.eventb.core.comment="车库默认为空" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="Lent ≔ ∅" org.eventb.core.comment="初始没有已借出车辆" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="Lend_Record ≔ ∅" org.eventb.core.comment="初始没有租借记录" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="Users ≔ ∅" org.eventb.core.comment="用户默认为空" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="(" org.eventb.core.comment="车棚内的单车" org.eventb.core.identifier="Garage"/>
 <org.eventb.core.variable name=")" org.eventb.core.comment="已经被借出的单车" org.eventb.core.identifier="Lent"/>
@@ -20,7 +21,7 @@
 <org.eventb.core.guard name="/" org.eventb.core.comment="单车归属状态判断" org.eventb.core.label="grd2" org.eventb.core.predicate="bicycle ∈ Garage ∧ bicycle ∉ Lent"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="Lent ≔ Lent ∪ {bicycle}" org.eventb.core.comment="单车加入已借出集合" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="Lend_Record ≔ Lend_Record ∪ {user ↦ bicycle}" org.eventb.core.comment="新增一条租借记录" org.eventb.core.label="act3"/>
-<org.eventb.core.guard name="." org.eventb.core.comment="用户类型判断" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ People"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="用户类型判断" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ Users"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="0" org.eventb.core.comment="用户还车" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Return">
 <org.eventb.core.parameter name="'" org.eventb.core.comment="还车人" org.eventb.core.identifier="user"/>
@@ -28,9 +29,12 @@
 <org.eventb.core.guard name=")" org.eventb.core.comment="单车类型判断" org.eventb.core.label="grd1" org.eventb.core.predicate="bicycle ∈ Bicycles"/>
 <org.eventb.core.guard name="*" org.eventb.core.comment="单车归属状态判断" org.eventb.core.label="grd2" org.eventb.core.predicate="bicycle ∉ Garage ∧ bicycle ∈ Lent"/>
 <org.eventb.core.parameter name="," org.eventb.core.comment="指定的租借记录" org.eventb.core.identifier="transaction"/>
-<org.eventb.core.guard name="-" org.eventb.core.comment="查询对应的租借记录" org.eventb.core.label="grd3" org.eventb.core.predicate="transaction ∈ Lend_Record ∧ transaction = user ↦ bicycle ∧ transaction ∉ ∅"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ Users"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="查询对应的租借记录" org.eventb.core.label="grd4" org.eventb.core.predicate="transaction ∈ Lend_Record ∧ transaction = user ↦ bicycle ∧ transaction ∉ ∅"/>
 <org.eventb.core.action name="." org.eventb.core.assignment="Lent ≔ Lent ∖ {bicycle}" org.eventb.core.comment="单车移出已借出集合" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="Garage ≔ Garage ∪ {bicycle}" org.eventb.core.comment="单车回到车棚" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="0" org.eventb.core.assignment="Lend_Record ≔ Lend_Record ∖ {transaction}" org.eventb.core.comment="清除对应的租借记录" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
+<org.eventb.core.variable name="1" org.eventb.core.comment="所有用户的集合" org.eventb.core.identifier="Users"/>
+<org.eventb.core.invariant name="2" org.eventb.core.label="inv4" org.eventb.core.predicate="Users ⊆ People"/>
 </org.eventb.core.machineFile>

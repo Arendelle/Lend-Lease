@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="Balance ≔ ∅" org.eventb.core.comment="初始没有余额账户" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="machine_refine2"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="车棚内的单车" org.eventb.core.identifier="Garage"/>
+<org.eventb.core.variable name="var2" org.eventb.core.comment="已经被借出的单车" org.eventb.core.identifier="Lent"/>
+<org.eventb.core.variable name="var3" org.eventb.core.comment="借车人与所借车的记录" org.eventb.core.identifier="Lend_Record"/>
+<org.eventb.core.variable name="var4" org.eventb.core.comment="所有用户的集合" org.eventb.core.identifier="Users"/>
+<org.eventb.core.variable name="var5" org.eventb.core.comment="会员集合" org.eventb.core.identifier="Membership"/>
+<org.eventb.core.variable name="var6" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
+<org.eventb.core.variable name="var7" org.eventb.core.comment="会员余额账户" org.eventb.core.identifier="Balance"/>
+<org.eventb.core.invariant name="+" org.eventb.core.label="inv1" org.eventb.core.predicate="Balance ∈ Membership → ℤ"/>
+<org.eventb.core.seesContext name="var9" org.eventb.core.target="context_refine3"/>
+<org.eventb.core.event name="var;" org.eventb.core.comment="给指定账户充值余额" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Charge">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="充值用户" org.eventb.core.identifier="user"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="充值金额" org.eventb.core.identifier="value"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="用户是会员，拥有余额账户" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ Membership"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="充值金额是小于最大值的正整数" org.eventb.core.label="grd2" org.eventb.core.predicate="value ∈ ℕ1 ∧ value ≤ CHARGE_SINGLE_MAX"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="Balance(user) ≔ Balance(user) + value" org.eventb.core.comment="指定账户增加余额" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Lease">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Lease"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="余额足够支付押金" org.eventb.core.label="grd6" org.eventb.core.predicate="Balance(user) &gt; DEPOSIT"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Balance(user) ≔ Balance(user) − DEPOSIT" org.eventb.core.comment="扣除租车押金" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="Balance(user) ≔ Balance(user) + DEPOSIT" org.eventb.core.comment="押金退回至余额账户" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Join">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Join"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="Balance ≔ Balance ∪ {user ↦ 0}" org.eventb.core.comment="新开一个余额为零的余额账户" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Quit">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Quit"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="退会时不处于欠费状态" org.eventb.core.label="grd4" org.eventb.core.predicate="Balance(user) ≥ 0"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="Balance ≔ {user} ⩤ Balance" org.eventb.core.comment="关闭该会员的余额账户" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

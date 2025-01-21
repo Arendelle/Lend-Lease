@@ -30,7 +30,7 @@
 <org.eventb.core.guard name="*" org.eventb.core.comment="单车归属状态判断" org.eventb.core.label="grd2" org.eventb.core.predicate="bicycle ∉ Garage ∧ bicycle ∈ Lent"/>
 <org.eventb.core.parameter name="," org.eventb.core.comment="指定的租借记录" org.eventb.core.identifier="transaction"/>
 <org.eventb.core.guard name="1" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ Users"/>
-<org.eventb.core.guard name="-" org.eventb.core.comment="查询对应的租借记录" org.eventb.core.label="grd4" org.eventb.core.predicate="transaction ∈ Lend_Record ∧ transaction = user ↦ bicycle ∧ transaction ∉ ∅"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="查询对应的租借记录" org.eventb.core.label="grd4" org.eventb.core.predicate="transaction ∈ Lend_Record ∧ transaction = user ↦ bicycle"/>
 <org.eventb.core.action name="." org.eventb.core.assignment="Lent ≔ Lent ∖ {bicycle}" org.eventb.core.comment="单车移出已借出集合" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="Garage ≔ Garage ∪ {bicycle}" org.eventb.core.comment="单车回到车棚" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="0" org.eventb.core.assignment="Lend_Record ≔ Lend_Record ∖ {transaction}" org.eventb.core.comment="清除对应的租借记录" org.eventb.core.label="act3"/>

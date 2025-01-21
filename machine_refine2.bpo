@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="19">
+<org.eventb.core.poFile org.eventb.core.poStamp="23">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Bicycles" org.eventb.core.type="ℙ(Bicycles)"/>
 <org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(People)"/>
@@ -19,7 +19,7 @@
 <org.eventb.core.poPredicate name="User_Lend_Counx" org.eventb.core.predicate="Users⊆People" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.invariant#2"/>
 <org.eventb.core.poPredicate name="User_Lend_Couny" org.eventb.core.predicate="User_Lend_Count∈Users → 0 ‥ LEASE_LIMIT" org.eventb.core.source="/Bicycle/machine_refine1.bum|org.eventb.core.machineFile#machine_refine1|org.eventb.core.invariant#2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine4" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="14">
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine4" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="21">
 <org.eventb.core.poIdentifier name="Membership'" org.eventb.core.type="ℙ(People)"/>
 <org.eventb.core.poIdentifier name="User_Lend_Count'" org.eventb.core.type="ℙ(People×ℤ)"/>
 <org.eventb.core.poIdentifier name="Garage'" org.eventb.core.type="ℙ(Bicycles)"/>
@@ -27,8 +27,8 @@
 <org.eventb.core.poIdentifier name="Lend_Record'" org.eventb.core.type="ℙ(People×Bicycles)"/>
 <org.eventb.core.poIdentifier name="Lent'" org.eventb.core.type="ℙ(Bicycles)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine4" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine4" org.eventb.core.poStamp="14"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine5" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine4" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine4" org.eventb.core.poStamp="21"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine5" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
 <org.eventb.core.poIdentifier name="User_Lend_Count'" org.eventb.core.type="ℙ(People×ℤ)"/>
 <org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
 <org.eventb.core.poIdentifier name="bicycle" org.eventb.core.type="Bicycles"/>
@@ -36,14 +36,14 @@
 <org.eventb.core.poIdentifier name="Lend_Record'" org.eventb.core.type="ℙ(People×Bicycles)"/>
 <org.eventb.core.poIdentifier name="Lent'" org.eventb.core.type="ℙ(Bicycles)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine5" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine5" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine5" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine5" org.eventb.core.poStamp="21">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bicycle∈Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#\/|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bicycle∈Garage∧bicycle∉Lent" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#\/|org.eventb.core.guard#\/"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#\/|org.eventb.core.guard#."/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="User_Lend_Count(user)&lt;LEASE_LIMIT" org.eventb.core.source="/Bicycle/machine_refine1.bum|org.eventb.core.machineFile#machine_refine1|org.eventb.core.event#\/|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#3|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine6" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine6" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="23">
 <org.eventb.core.poIdentifier name="transaction" org.eventb.core.type="People×Bicycles"/>
 <org.eventb.core.poIdentifier name="User_Lend_Count'" org.eventb.core.type="ℙ(People×ℤ)"/>
 <org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
@@ -52,37 +52,37 @@
 <org.eventb.core.poIdentifier name="Lend_Record'" org.eventb.core.type="ℙ(People×Bicycles)"/>
 <org.eventb.core.poIdentifier name="Lent'" org.eventb.core.type="ℙ(Bicycles)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine6" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine6" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine6" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine6" org.eventb.core.poStamp="23">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bicycle∈Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bicycle∉Garage∧bicycle∈Lent" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#1"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="transaction∈Lend_Record∧transaction=user ↦ bicycle∧transaction∉(∅ ⦂ ℙ(People×Bicycles))" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="transaction∈Lend_Record∧transaction=user ↦ bicycle" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#-"/>
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="User_Lend_Count(user)&gt;0" org.eventb.core.source="/Bicycle/machine_refine1.bum|org.eventb.core.machineFile#machine_refine1|org.eventb.core.event#0|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#4|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine7" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine7" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Membership'" org.eventb.core.type="ℙ(People)"/>
 <org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine7" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine7" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine7" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine7" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#7|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∉Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#7|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="Quit/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="19">
+<org.eventb.core.poSequent name="Quit/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="21">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTHYPcontext_refine8("/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="user∈dom(User_Lend_Count)∧User_Lend_Count∈People ⇸ ℤ" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#*"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTHYPcontext_refine8("/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine8" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine8" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Membership'" org.eventb.core.type="ℙ(People)"/>
 <org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTHYPcontext_refine8(" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine8" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTHYPcontext_refine8(" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine8" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine8" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTHYPcontext_refine8(" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine8" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#EVTHYPcontext_refine8(" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="User_Lend_Count(user)=0" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#*"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Bicycle/machine_refine2.bpo|org.eventb.core.poFile#machine_refine2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="19">

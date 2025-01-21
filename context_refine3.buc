@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;org.animb.valuation.valBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="context_refine2"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.comment="信用额度" org.eventb.core.identifier="CREDIT_THRESHOLD"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="CREDIT_THRESHOLD ∈ ℕ"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.comment="租一辆车需要缴纳的押金" org.eventb.core.identifier="DEPOSIT"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm2" org.eventb.core.predicate="DEPOSIT ∈ ℕ"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="," org.eventb.core.comment="单次最大充值额度" org.eventb.core.identifier="CHARGE_SINGLE_MAX"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm3" org.eventb.core.predicate="CHARGE_SINGLE_MAX ∈ ℕ1"/>
+</org.eventb.core.contextFile>

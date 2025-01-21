@@ -17,7 +17,7 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="4" org.eventb.core.comment="用户还车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd6" org.eventb.core.predicate="user ∈ Membership"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="用户为会员才可还车" org.eventb.core.label="grd6" org.eventb.core.predicate="user ∈ Membership"/>
 </org.eventb.core.event>
 <org.eventb.core.invariant name="6" org.eventb.core.label="inv1" org.eventb.core.predicate="Membership ⊆ People" org.eventb.core.theorem="true"/>
 <org.eventb.core.event name="7" org.eventb.core.comment="加入会员" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Join">

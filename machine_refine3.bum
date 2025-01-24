@@ -3,6 +3,12 @@
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="Balance ≔ ∅" org.eventb.core.comment="初始没有余额账户" org.eventb.core.label="act7"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Del">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Del"/>
+</org.eventb.core.event>
 <org.eventb.core.refinesMachine name="(" org.eventb.core.target="machine_refine2"/>
 <org.eventb.core.variable name="var1" org.eventb.core.comment="车棚内的单车" org.eventb.core.identifier="Garage"/>
 <org.eventb.core.variable name="var2" org.eventb.core.comment="已经被借出的单车" org.eventb.core.identifier="Lent"/>
@@ -13,6 +19,9 @@
 <org.eventb.core.variable name="var7" org.eventb.core.comment="会员余额账户" org.eventb.core.identifier="Balance"/>
 <org.eventb.core.invariant name="+" org.eventb.core.label="inv1" org.eventb.core.predicate="Balance ∈ Membership → ℤ"/>
 <org.eventb.core.seesContext name="var9" org.eventb.core.target="context_refine3"/>
+<org.eventb.core.event name="var@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Abnormal">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Vehicle_Abnormal"/>
+</org.eventb.core.event>
 <org.eventb.core.event name="var;" org.eventb.core.comment="给指定账户充值余额" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Charge">
 <org.eventb.core.parameter name="'" org.eventb.core.comment="充值用户" org.eventb.core.identifier="user"/>
 <org.eventb.core.parameter name="(" org.eventb.core.comment="充值金额" org.eventb.core.identifier="value"/>

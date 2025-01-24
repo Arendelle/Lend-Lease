@@ -10,6 +10,12 @@
 <org.eventb.core.variable name="var6" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
 <org.eventb.core.variable name="var7" org.eventb.core.comment="会员余额账户" org.eventb.core.identifier="Balance"/>
 <org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Del">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Del"/>
+</org.eventb.core.event>
 <org.eventb.core.event name="var;" org.eventb.core.comment="给指定账户充值余额" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Charge">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Charge"/>
 </org.eventb.core.event>
@@ -25,16 +31,15 @@
 <org.eventb.core.event name="var@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Quit">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Quit"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="varA" org.eventb.core.comment="车辆加入车库" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Vehicle_Add">
-<org.eventb.core.parameter name="'" org.eventb.core.comment="要被添加的车" org.eventb.core.identifier="bicycle"/>
-<org.eventb.core.guard name="(" org.eventb.core.comment="判断车辆类型" org.eventb.core.label="grd1" org.eventb.core.predicate="bicycle ∈ Bicycles"/>
+<org.eventb.core.event name="varA" org.eventb.core.comment="车辆加入车库" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Add">
 <org.eventb.core.guard name=")" org.eventb.core.comment="车辆不属于车库" org.eventb.core.label="grd2" org.eventb.core.predicate="bicycle ∉ Garage ∧ bicycle ∉ Lent"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="Garage ≔ Garage ∪ {bicycle}" org.eventb.core.comment="将车加入车库" org.eventb.core.label="act1"/>
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="Garage_Add"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="varB" org.eventb.core.comment="报废单车退出车棚" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Vehicle_Discard">
-<org.eventb.core.parameter name="'" org.eventb.core.identifier="bicycle"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="bicycle ∈ Bicycles"/>
+<org.eventb.core.event name="varB" org.eventb.core.comment="报废单车退出车棚" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Discard">
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="bicycle ∈ Garage ∧ bicycle ∉ Lent"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="Garage ≔ Garage ∖ {bicycle}" org.eventb.core.label="act1"/>
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="Garage_Del"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varC" org.eventb.core.comment="报废异常状态单车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Abnormal">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Vehicle_Abnormal"/>
 </org.eventb.core.event>
 </org.eventb.core.machineFile>

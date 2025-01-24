@@ -6,19 +6,39 @@
 <org.eventb.core.variable name=")" org.eventb.core.comment="已经被借出的单车" org.eventb.core.identifier="Lent"/>
 <org.eventb.core.variable name="-" org.eventb.core.comment="借车人与所借车的记录" org.eventb.core.identifier="Lend_Record"/>
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="(" org.eventb.core.assignment="Lend_Record ≔ ∅" org.eventb.core.comment="初始没有租借记录" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="User_Lend_Count ≔ ∅" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Del">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Del"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Abnormal">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Del"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="用户为合法用户" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ Users"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="Lend_Record ≔ Lend_Record ∖ {user ↦ bicycle}" org.eventb.core.comment="删除对应的租借记录" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="User_Lend_Count(user) ≔ User_Lend_Count(user) − 1" org.eventb.core.comment="用户的租车数量减1" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="存在对应的租借记录" org.eventb.core.label="grd3" org.eventb.core.predicate="user ↦ bicycle ∈ Lend_Record"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="用户的租车数量不能为负" org.eventb.core.label="grd4" org.eventb.core.predicate="User_Lend_Count(user) &gt; 0"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="/" org.eventb.core.comment="用户借车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Lease">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Lease"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="Lend_Record ≔ Lend_Record ∪ {user ↦ bicycle}" org.eventb.core.comment="新增一条租借记录" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="(" org.eventb.core.comment="保证借车时用户占用车数量小于借用限制数" org.eventb.core.label="grd4" org.eventb.core.predicate="User_Lend_Count(user) &lt; LEASE_LIMIT"/>
 <org.eventb.core.action name="internal2" org.eventb.core.assignment="User_Lend_Count(user) ≔ User_Lend_Count(user) + 1" org.eventb.core.comment="用户占用车数量加一" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="0" org.eventb.core.comment="用户还车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="查询对应的租借记录" org.eventb.core.label="grd4" org.eventb.core.predicate="user ↦ bicycle ∈ Lend_Record ∧ user ↦ bicycle = user ↦ bicycle"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="Lend_Record ≔ Lend_Record ∖ {user ↦ bicycle}" org.eventb.core.comment="清除对应的租借记录" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="(" org.eventb.core.comment="还车时保证用户占用车数量大于0" org.eventb.core.label="grd5" org.eventb.core.predicate="User_Lend_Count(user) &gt; 0"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="User_Lend_Count(user) ≔ User_Lend_Count(user) − 1" org.eventb.core.comment="用户占用车数量减一" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="3" org.eventb.core.comment="所有用户的集合" org.eventb.core.identifier="Users"/>
 <org.eventb.core.variable name="1" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
 <org.eventb.core.invariant name="2" org.eventb.core.comment="为user与自然数的二元组" org.eventb.core.label="inv1" org.eventb.core.predicate="User_Lend_Count ∈ Users → 0‥LEASE_LIMIT"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.comment="借车人与所借车的二元组记录" org.eventb.core.label="inv2" org.eventb.core.predicate="Lend_Record ⊆ People × Bicycles"/>
 </org.eventb.core.machineFile>

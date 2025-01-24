@@ -11,6 +11,16 @@
 <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="Membership ≔ ∅" org.eventb.core.comment="初始没有会员" org.eventb.core.label="act6"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Del">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Del"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Abnormal">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Vehicle_Abnormal"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="用户是会员" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ Membership"/>
+</org.eventb.core.event>
 <org.eventb.core.event name="3" org.eventb.core.comment="用户借车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Lease">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Lease"/>
 <org.eventb.core.guard name="(" org.eventb.core.comment="用户为会员才可借车" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ Membership"/>

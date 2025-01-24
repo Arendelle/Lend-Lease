@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Bicycles" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="LEASE_LIMIT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="LEASE_LIMIU" org.eventb.core.predicate="LEASE_LIMIT∈ℕ" org.eventb.core.source="/Bicycle/context_refine1.buc|org.eventb.core.contextFile#context_refine1|org.eventb.core.axiom#)"/>
+<org.eventb.core.poIdentifier name="CHARGE_SINGLE_MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="CREDIT_THRESHOLD" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="DEPOSIT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CHARGE_SINGLE_MAY" org.eventb.core.predicate="CREDIT_THRESHOLD∈ℕ" org.eventb.core.source="/Bicycle/context_refine3.buc|org.eventb.core.contextFile#context_refine3|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="CHARGE_SINGLE_MAZ" org.eventb.core.predicate="DEPOSIT∈ℕ" org.eventb.core.source="/Bicycle/context_refine3.buc|org.eventb.core.contextFile#context_refine3|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="CHARGE_SINGLE_MA[" org.eventb.core.predicate="CHARGE_SINGLE_MAX∈ℕ1" org.eventb.core.source="/Bicycle/context_refine3.buc|org.eventb.core.contextFile#context_refine3|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="CHARGING_RATE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="DURATION_FREE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CHARGE_SINGLE_MA\" org.eventb.core.predicate="DURATION_FREE∈ℕ" org.eventb.core.source="/Bicycle/context_refine4.buc|org.eventb.core.contextFile#context_refine4|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="CHARGE_SINGLE_MA]" org.eventb.core.predicate="CHARGING_RATE∈ℕ" org.eventb.core.source="/Bicycle/context_refine4.buc|org.eventb.core.contextFile#context_refine4|org.eventb.core.axiom#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="Garage" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lend_Record" org.eventb.core.type="ℙ(People×Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lent" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="Membership" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="User_Lend_Count" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="Users" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poPredicate name="User_Lend_Counu" org.eventb.core.predicate="Garage⊆Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.invariant#*"/>
+<org.eventb.core.poPredicate name="User_Lend_Counv" org.eventb.core.predicate="Lent⊆Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="User_Lend_Counw" org.eventb.core.predicate="Lend_Record⊆People × Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="User_Lend_Counx" org.eventb.core.predicate="Users⊆People" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="User_Lend_Couny" org.eventb.core.predicate="User_Lend_Count∈Users → 0 ‥ LEASE_LIMIT" org.eventb.core.source="/Bicycle/machine_refine1.bum|org.eventb.core.machineFile#machine_refine1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="User_Lend_Counz" org.eventb.core.predicate="Membership⊆People" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.invariant#6"/>
+<org.eventb.core.poPredicate name="User_Lend_Coun{" org.eventb.core.predicate="Balance∈Membership → ℤ" org.eventb.core.source="/Bicycle/machine_refine3.bum|org.eventb.core.machineFile#machine_refine3|org.eventb.core.invariant#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine5" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="Membership'" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="User_Lend_Count'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="Garage'" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="Users'" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="Lend_Record'" org.eventb.core.type="ℙ(People×Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lent'" org.eventb.core.type="ℙ(Bicycles)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine5" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine5" org.eventb.core.poStamp="39"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine6" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="value" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine6" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine6" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine3.bum|org.eventb.core.machineFile#machine_refine3|org.eventb.core.event#var;|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="value∈ℕ1∧value≤CHARGE_SINGLE_MAX" org.eventb.core.source="/Bicycle/machine_refine3.bum|org.eventb.core.machineFile#machine_refine3|org.eventb.core.event#var;|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine7" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="User_Lend_Count'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="bicycle" org.eventb.core.type="Bicycles"/>
+<org.eventb.core.poIdentifier name="Garage'" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lend_Record'" org.eventb.core.type="ℙ(People×Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lent'" org.eventb.core.type="ℙ(Bicycles)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine7" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine7" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bicycle∈Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#\/|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bicycle∈Garage∧bicycle∉Lent" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#\/|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#\/|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="User_Lend_Count(user)&lt;LEASE_LIMIT" org.eventb.core.source="/Bicycle/machine_refine1.bum|org.eventb.core.machineFile#machine_refine1|org.eventb.core.event#\/|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#3|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Balance(user)&gt;DEPOSIT" org.eventb.core.source="/Bicycle/machine_refine3.bum|org.eventb.core.machineFile#machine_refine3|org.eventb.core.event#var&gt;|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine8" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="transaction" org.eventb.core.type="People×Bicycles"/>
+<org.eventb.core.poIdentifier name="User_Lend_Count'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="bicycle" org.eventb.core.type="Bicycles"/>
+<org.eventb.core.poIdentifier name="Garage'" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lend_Record'" org.eventb.core.type="ℙ(People×Bicycles)"/>
+<org.eventb.core.poIdentifier name="Lent'" org.eventb.core.type="ℙ(Bicycles)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine8" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine8" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bicycle∈Bicycles" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bicycle∉Garage∧bicycle∈Lent" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#1"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="transaction∈Lend_Record∧transaction=user ↦ bicycle" org.eventb.core.source="/Bicycle/machine_base.bum|org.eventb.core.machineFile#machine_base|org.eventb.core.event#0|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="User_Lend_Count(user)&gt;0" org.eventb.core.source="/Bicycle/machine_refine1.bum|org.eventb.core.machineFile#machine_refine1|org.eventb.core.event#0|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#4|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine9" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="Membership'" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine9" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine9" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#7|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∉Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine:" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="Balance'" org.eventb.core.type="ℙ(People×ℤ)"/>
+<org.eventb.core.poIdentifier name="Membership'" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="People"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine:" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine:" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈Users" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈Membership" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="User_Lend_Count(user)=0" org.eventb.core.source="/Bicycle/machine_refine2.bum|org.eventb.core.machineFile#machine_refine2|org.eventb.core.event#8|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Balance(user)≥0" org.eventb.core.source="/Bicycle/machine_refine3.bum|org.eventb.core.machineFile#machine_refine3|org.eventb.core.event#var=|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Vehicle_Add/Garage/EQL" org.eventb.core.accurate="true" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTALLHYPcontext_refine;"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Garage∪{bicycle}=Garage" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varA|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poSequent#Vehicle_Add\/Garage\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine;" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="bicycle" org.eventb.core.type="Bicycles"/>
+<org.eventb.core.poIdentifier name="Garage'" org.eventb.core.type="ℙ(Bicycles)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine;" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine;" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bicycle∈Bicycles" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varA|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bicycle∉Garage∧bicycle∉Lent" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varA|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Vehicle_Discard/Garage/EQL" org.eventb.core.accurate="true" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTALLHYPcontext_refine="/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Garage ∖ {bicycle}=Garage" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varB|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varB"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poSequent#Vehicle_Discard\/Garage\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTcontext_refine=" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="39">
+<org.eventb.core.poIdentifier name="bicycle" org.eventb.core.type="Bicycles"/>
+<org.eventb.core.poIdentifier name="Garage'" org.eventb.core.type="ℙ(Bicycles)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPcontext_refine=" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#EVTIDENTcontext_refine=" org.eventb.core.poStamp="39">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bicycle∈Bicycles" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varB|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bicycle∈Garage∧bicycle∉Lent" org.eventb.core.source="/Bicycle/machine_refine4.bum|org.eventb.core.machineFile#machine_refine4|org.eventb.core.event#varB|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Bicycle/machine_refine4.bpo|org.eventb.core.poFile#machine_refine4|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="39"/>
+</org.eventb.core.poFile>

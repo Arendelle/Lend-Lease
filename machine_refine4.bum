@@ -9,7 +9,9 @@
 <org.eventb.core.variable name="var5" org.eventb.core.comment="会员集合" org.eventb.core.identifier="Membership"/>
 <org.eventb.core.variable name="var6" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
 <org.eventb.core.variable name="var7" org.eventb.core.comment="会员余额账户" org.eventb.core.identifier="Balance"/>
-<org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="Timestamp ≔ ∅" org.eventb.core.comment="时间戳初始为空" org.eventb.core.label="act8"/>
+</org.eventb.core.event>
 <org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>
 </org.eventb.core.event>
@@ -21,9 +23,27 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="var=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Lease">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Lease"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="所借时间" org.eventb.core.identifier="time"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Timestamp ≔ Timestamp ∪ {bicycle ↦ time}" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd7" org.eventb.core.predicate="time ∈ ℕ"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="var&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return">
+<org.eventb.core.event name="var&gt;" org.eventb.core.comment="未超出免费时常的还车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return1">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="还车时间类型" org.eventb.core.label="grd9" org.eventb.core.predicate="time ∈ ℕ"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="保证时常小于免费时常" org.eventb.core.label="grd10" org.eventb.core.predicate="Timestamp(bicycle) − time ≤ DURATION_FREE"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="还车时间" org.eventb.core.identifier="time"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="Timestamp ≔ {bicycle} ⩤ Timestamp" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="免费时常内费用为0" org.eventb.core.label="grd11" org.eventb.core.predicate="Amount = 0"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="保证不超信用额度" org.eventb.core.label="grd12" org.eventb.core.predicate="Balance(user) + DEPOSIT − Amount ≥ −CREDIT_LIMIT"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varF" org.eventb.core.comment="超出免费时常的还车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="还车时间" org.eventb.core.identifier="time"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd9" org.eventb.core.predicate="time ∈ ℕ"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="超出免费时常限制" org.eventb.core.label="grd10" org.eventb.core.predicate="time − Timestamp(bicycle)&gt; DURATION_FREE"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="计算开销" org.eventb.core.label="grd11" org.eventb.core.predicate="Amount = (time − Timestamp(bicycle) − DURATION_FREE) ∗ CHARGING_RATE"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="Timestamp ≔ {bicycle} ⩤ Timestamp" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="保证不超信用额度" org.eventb.core.label="grd12" org.eventb.core.predicate="Balance(user) + DEPOSIT − Amount ≥ −CREDIT_LIMIT"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Join">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Join"/>
@@ -42,4 +62,6 @@
 <org.eventb.core.event name="varC" org.eventb.core.comment="报废异常状态单车" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Vehicle_Abnormal">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Vehicle_Abnormal"/>
 </org.eventb.core.event>
+<org.eventb.core.variable name="varD" org.eventb.core.comment="借车时间戳" org.eventb.core.identifier="Timestamp"/>
+<org.eventb.core.invariant name="varE" org.eventb.core.label="inv1" org.eventb.core.predicate="Timestamp ∈ Lent → ℕ"/>
 </org.eventb.core.machineFile>

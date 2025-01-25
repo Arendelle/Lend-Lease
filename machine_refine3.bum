@@ -36,7 +36,10 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="var?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Return">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Return"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="Balance(user) ≔ Balance(user) + DEPOSIT" org.eventb.core.comment="押金退回至余额账户" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="Balance(user) ≔ Balance(user) + DEPOSIT − Amount" org.eventb.core.comment="押金退回至余额账户并减去所扣金额" org.eventb.core.label="act5"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="所需金额" org.eventb.core.identifier="Amount"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="所需金额类型" org.eventb.core.label="grd7" org.eventb.core.predicate="Amount ∈ ℕ"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="保证扣除金额后类型不变" org.eventb.core.label="grd8" org.eventb.core.predicate="Balance(user) + DEPOSIT − Amount ∈ ℤ"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Join">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Join"/>

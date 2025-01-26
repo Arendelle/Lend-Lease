@@ -10,7 +10,7 @@
 <org.eventb.core.variable name="var6" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
 <org.eventb.core.variable name="var7" org.eventb.core.comment="会员余额账户" org.eventb.core.identifier="Balance"/>
 <org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="Timestamp ≔ ∅" org.eventb.core.comment="时间戳初始为空" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="Timestamp ≔ ∅" org.eventb.core.comment="时间戳初始为空" org.eventb.core.label="act9"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>
@@ -64,4 +64,5 @@
 </org.eventb.core.event>
 <org.eventb.core.variable name="varD" org.eventb.core.comment="借车时间戳" org.eventb.core.identifier="Timestamp"/>
 <org.eventb.core.invariant name="varE" org.eventb.core.label="inv1" org.eventb.core.predicate="Timestamp ∈ Lent → ℕ"/>
+<org.eventb.core.variable name="var8" org.eventb.core.comment="全体单车的集合" org.eventb.core.identifier="Bicycles"/>
 </org.eventb.core.machineFile>

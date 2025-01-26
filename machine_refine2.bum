@@ -8,8 +8,9 @@
 <org.eventb.core.variable name="var2" org.eventb.core.comment="所有用户的集合" org.eventb.core.identifier="Users"/>
 <org.eventb.core.variable name="var1" org.eventb.core.comment="会员集合" org.eventb.core.identifier="Membership"/>
 <org.eventb.core.variable name="1" org.eventb.core.comment="借车人所借车的数量" org.eventb.core.identifier="User_Lend_Count"/>
+<org.eventb.core.variable name="var4" org.eventb.core.comment="全体单车的集合" org.eventb.core.identifier="Bicycles"/>
 <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="Membership ≔ ∅" org.eventb.core.comment="初始没有会员" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="Membership ≔ ∅" org.eventb.core.comment="初始没有会员" org.eventb.core.label="act7"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Garage_Add">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Garage_Add"/>

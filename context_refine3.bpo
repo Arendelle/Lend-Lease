@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="7">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="7">
-<org.eventb.core.poIdentifier name="Bicycles" org.eventb.core.type="ℙ(Bicycles)"/>
+<org.eventb.core.poFile org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="8">
 <org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="Vehicles" org.eventb.core.type="ℙ(Vehicles)"/>
 <org.eventb.core.poIdentifier name="LEASE_LIMIT" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poPredicate name="LEASE_LIMIU" org.eventb.core.predicate="LEASE_LIMIT∈ℕ" org.eventb.core.source="/Bicycle/context_refine1.buc|org.eventb.core.contextFile#context_refine1|org.eventb.core.axiom#)"/>
 <org.eventb.core.poIdentifier name="CHARGE_SINGLE_MAX" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="CREDIT_THRESHOLD" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="DEPOSIT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Bicycle/context_refine3.bpo|org.eventb.core.poFile#context_refine3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Bicycle/context_refine3.bpo|org.eventb.core.poFile#context_refine3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="8">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CREDIT_THRESHOLD∈ℕ" org.eventb.core.source="/Bicycle/context_refine3.buc|org.eventb.core.contextFile#context_refine3|org.eventb.core.axiom#)"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="DEPOSIT∈ℕ" org.eventb.core.source="/Bicycle/context_refine3.buc|org.eventb.core.contextFile#context_refine3|org.eventb.core.axiom#+"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="CHARGE_SINGLE_MAX∈ℕ1" org.eventb.core.source="/Bicycle/context_refine3.buc|org.eventb.core.contextFile#context_refine3|org.eventb.core.axiom#-"/>
